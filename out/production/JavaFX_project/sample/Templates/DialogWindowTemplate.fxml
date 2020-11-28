@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane fx:id="DialogWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+          prefHeight="200.0" prefWidth="330.0"
+          xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="sample.ControllersWindow.DialogWidowController">
+    <columnConstraints>
+        <ColumnConstraints minWidth="10.0" prefWidth="30.0" />
+        <ColumnConstraints minWidth="10.0" prefWidth="110.0" />
+        <ColumnConstraints minWidth="10.0" prefWidth="30.0" />
+        <ColumnConstraints minWidth="10.0" prefWidth="130.0" />
+        <ColumnConstraints minWidth="10.0" prefWidth="30.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="50.0" />
+        <RowConstraints minHeight="10.0" prefHeight="50.0" />
+        <RowConstraints minHeight="10.0" prefHeight="50.0" />
+        <RowConstraints minHeight="10.0" prefHeight="50.0" />
+    </rowConstraints>
+   <children>
+      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0"
+              fx:id="cancelButton"
+              text="Cancel"
+              onAction="#clickCancelButton"
+              GridPane.columnIndex="1" GridPane.rowIndex="3"
+      />
+      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="146.0"
+              fx:id="okButton"
+              text="Ok"
+              onAction="#clickOkButton"
+              GridPane.columnIndex="3" GridPane.rowIndex="3"
+      />
+      <TextField text="0"
+                 fx:id="leftBorderX"
+                 GridPane.columnIndex="3"
+      />
+      <TextField text="10"
+                 fx:id="rightBorderX"
+                 GridPane.columnIndex="3" GridPane.rowIndex="1"
+      />
+      <Spinner fx:id="spinner" 
+               initialValue="2" GridPane.columnIndex="3"
+               GridPane.rowIndex="2" min="2" max="10000000"
+      />
+      <Label prefHeight="28.0" prefWidth="106.0" text="Left domain border" GridPane.columnIndex="1" />
+      <Label prefHeight="28.0" prefWidth="116.0" text="Right domain border" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label prefHeight="25.0" prefWidth="82.0" text="Points count" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+   </children>
+</GridPane>
