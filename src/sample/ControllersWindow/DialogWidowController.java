@@ -1,25 +1,48 @@
 package sample.ControllersWindow;
 
+import com.sun.javafx.scene.layout.region.Margins;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.event.*;
+import sample.Templates.WindowManager;
 
 public class DialogWidowController {
-    @FXML
-    private Button cancelButton;
+
+    /*public static double leftBoard;
+
+    public static double rightBoard;
+
+    public static int count;*/
 
     @FXML
-    private Button okButton;
+    public Button cancelButton;
 
     @FXML
-    private Spinner<Integer> spinner;
+    public  Button okButton;
+
+    @FXML
+    public TextField leftBorderX;
+
+    @FXML
+    public TextField rightBorderX;
+
+    @FXML
+    public Spinner<Integer> spinner;
 
     @FXML
     private void clickOkButton(ActionEvent event){
-        int k = spinner.getValue();
-        cancelButton.setText(Integer.toString(k));
+        WindowManager.count = spinner.getValue();
+        String left = leftBorderX.getText();
+        String right = rightBorderX.getText();
+        WindowManager.leftBoard = Double.parseDouble(left);
+        WindowManager.rightBoard = Double.parseDouble(right);
+        WindowManager.changeParametrs = true;
+        WindowManager.dialogWindow.hide();
     }
 
     @FXML
-    private void clickCancelButton(ActionEvent event){}
+    private void clickCancelButton(ActionEvent event){
+        WindowManager.dialogWindow.hide();
+    }
+
 }

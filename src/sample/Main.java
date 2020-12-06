@@ -24,10 +24,14 @@ public class Main extends Application {
             Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
             primaryStage.setTitle("Hello World");
             primaryStage.setScene(new Scene(root, 300, 275));
-            primaryStage.show();
-            Test.showMainWindow();
-            Test.showDialogWindow();
-            MessageBoxWindowController.show("Hi!");
+            WindowManager.startMainWindow();
+            WindowManager.startDialogWindow();
+            //primaryStage.show();
+            //Test.showMainWindow();
+            //Test.showDialogWindow();
+            /*WindowManager manager = new WindowManager();
+            manager.startMainWindow();
+            manager.startDialogWindow();
             /*stage = new Stage();
             stage.setTitle("новое окно");
             stage.initModality(Modality.APPLICATION_MODAL);

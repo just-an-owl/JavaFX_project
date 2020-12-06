@@ -18,19 +18,5 @@ public class MessageBoxWindowController {
     private static Stage messageBoxStage;
 
     @FXML
-    private static TextField textField;
-
-    @FXML
-    public static void show(String message) throws IOException {
-        Parent root = FXMLLoader.load(MessageBoxWindowController.class.getResource("Templates//MessageBoxWindowTemplate.fxml"));
-        messageBoxStage.setScene(new Scene(root, 330, 475));
-        messageBoxStage.show();
-        textField.setText(message);
-    }
-
-    @FXML
-    private void clickOk(ActionEvent event){
-
-    }
-
+    public static TextField textField;
 }
