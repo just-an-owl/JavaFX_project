@@ -8,6 +8,7 @@ import javafx.scene.control.*;
 import javafx.event.*;
 import javafx.stage.Stage;
 
+import javafx.stage.WindowEvent;
 import sample.Templates.*;
 import java.io.IOException;
 
@@ -15,8 +16,14 @@ public class MessageBoxWindowController {
 
 
     @FXML
-    private static Stage messageBoxStage;
+    public  TextField textField;
 
-    @FXML
-    public static TextField textField;
+    {
+        WindowManager.messageBox.setOnShowing(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent windowEvent) {
+                textField.setText(WindowManager.message);
+            }
+        });
+    }
 }

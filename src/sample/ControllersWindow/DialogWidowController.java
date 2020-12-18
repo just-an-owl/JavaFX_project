@@ -1,18 +1,17 @@
 package sample.ControllersWindow;
 
+import com.sun.glass.ui.Window;
 import com.sun.javafx.scene.layout.region.Margins;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.event.*;
 import sample.Templates.WindowManager;
 
+import java.io.IOException;
+
 public class DialogWidowController {
 
-    /*public static double leftBoard;
 
-    public static double rightBoard;
-
-    public static int count;*/
 
     @FXML
     public Button cancelButton;
@@ -30,12 +29,18 @@ public class DialogWidowController {
     public Spinner<Integer> spinner;
 
     @FXML
-    private void clickOkButton(ActionEvent event){
+    private void clickOkButton(ActionEvent event) throws IOException {
         WindowManager.count = spinner.getValue();
         String left = leftBorderX.getText();
         String right = rightBorderX.getText();
-        WindowManager.leftBoard = Double.parseDouble(left);
-        WindowManager.rightBoard = Double.parseDouble(right);
+        try
+        {
+            WindowManager.leftBoard = Double.parseDouble(left);
+            WindowManager.rightBoard = Double.parseDouble(right);
+        }
+        catch (NumberFormatException exception){
+            WindowManager.showMassageBox("invalid value in left or right board");
+        }
         WindowManager.changeParametrs = true;
         WindowManager.dialogWindow.hide();
     }

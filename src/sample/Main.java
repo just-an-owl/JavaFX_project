@@ -10,7 +10,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import sample.Templates.*;
-import sample.ControllersWindow.MessageBoxWindowController;
+
 
 
 
@@ -23,9 +23,10 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
             Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
             primaryStage.setTitle("Hello World");
-            primaryStage.setScene(new Scene(root, 300, 275));
+            primaryStage.setScene(new Scene(root, 300, 275));WindowManager.showMassageBox("check");
             WindowManager.startMainWindow();
-            WindowManager.startDialogWindow();
+            //WindowManager.startDialogWindow();
+
             //primaryStage.show();
             //Test.showMainWindow();
             //Test.showDialogWindow();
